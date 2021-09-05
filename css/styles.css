@@ -277,6 +277,6 @@ html,body{
   animation-name: fadeInUp;
 }
 
-body#login1{
-background-color: rgba(0,0,0,0.5); !important
+#NombreUsuario{
+  color: rgb(23, 162, 255);
 }

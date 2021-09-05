@@ -12,74 +12,9 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/login.css" rel="stylesheet">
   <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
-<style>
 
-  *{
-    padding: 0;
-    margin: 0;
-    text-decoration: none;
-    box-sizing: border-box;
-    border: none;
-  }
-  body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: rgba(172,58,180,1);
-    background: linear-gradient(90deg, rgba(172,58,180,1)0%,
-    rgba(11, 151, 231, 0.5)50%,
-    rgba(172,58,180,1)100%);
-  }
-
-  .container{
-    display: flex;
-    justify-content: center;
-    height: 100vh;
-    align-items: center;
-  }
-
-  .card{
-    border: 1rem;
-    box-shadow: 0 1rem 1rem rgb(0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    margin: 1.5rem;
-    overflow: hidden;
-    width: 25rem;
-    height: 35rem;
-    background-color: rgb(255, 255, 255, 0.060);
-    backdrop-filter: blur(1rem);
-    justify-content: center;
-  }
-
-  .content{
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .content i{
-    font-size: 2.5rem;
-    color: white;
-  }
-
-  .content p{
-font-size: 0.9rem;
-justify-content: center;
-color: white;
-  }
-
-  .text{
-    width: 100%;
-    height: 3rem;
-    font-size: 1.2rem;
-    padding: 1rem;
-  }
-
-
-</style>
   <!-- <style>
     html, body{
       height: 100%;
@@ -105,31 +40,22 @@ color: white;
 </head> !-->
 
 <body>
-  <!--
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 1 (Fecha de entrega: 08/08/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
-  </div>
--->
   <div class="container">
     <div class="card">
-      <form id="login" action="principal-index.html">
+      <form id="login">
         <div class="content">
           
           <i class="fa fa-lock" aria-hidden="true"></i>
-                        <p>USER</p>
-                        <input type="text" id="name">
-                        <p>PASSWORD</p>
-                        <input type="password" id="password">
-                        <button type="submit" class="btn btn-outline-primary">LOGIN</button>
-                </form>
-        </div>
+          <p>USER</p>
+        <input type="text" id="nombre">
+        <p>PASSWORD</p>
+        <input type="password" id="pass">
+        <input type="button" value="Entrar" id="clicklogin" onclick="validar()">
+      </form>
     </div>
 </div>
+</div>
+
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>
 </body>
