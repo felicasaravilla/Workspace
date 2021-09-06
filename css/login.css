@@ -6,7 +6,7 @@
     border: none;
   }
   body {
-    font-family: 'Raleway', serif;;
+    font-family: 'Raleway', serif;
     background: rgb(255, 255, 255,1);
     background: linear-gradient(90deg, rgba(255, 255, 255,1)0%,
     rgba(82, 82, 82, 0.5)50%,
@@ -70,7 +70,7 @@ color: white;
   }
 
   #clicklogin{
-    font-family: 'Raleway', serif;;
+    font-family: 'Raleway', serif;
     background-color: Transparent;
     position: relative;
     display: inline-block;
