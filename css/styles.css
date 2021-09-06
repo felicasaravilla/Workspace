@@ -146,6 +146,7 @@ html,body{
     height: 100%;
 }
 
+/*
 .login-container{
     position: relative;
     width: 300px;
@@ -155,7 +156,7 @@ html,body{
     background: #fff;
     border: 1px solid #ccc;
 }
-
+*/
 #output{
     position: absolute;
     width: 300px;
@@ -281,5 +282,25 @@ html,body{
 }
 
 #NombreUsuario{
-  color: rgb(23, 162, 255);
+  color: rgb(23, 162, 255) !important;
+}
+
+#Inicio, #Categorias, #Vender, #Productos, #MiCarrito, #NombreUsuario{
+  font-family: 'Raleway', serif;
+  background-color: Transparent;
+  position: relative;
+  display: inline-block;
+  padding: 15px 30px;
+  color: #fff;
+  letter-spacing: 2px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: all 300ms;
+}
+
+#Inicio:hover, #Categorias:hover, #Vender:hover, #Productos:hover, #MiCarrito:hover, #NombreUsuario:hover{
+  background: #000000;
+  box-shadow: 0 0 10px #000000, 0 0 40px
+  #000000, 0 0 80px #000000;
+  transform: scale(1.15);
 }
