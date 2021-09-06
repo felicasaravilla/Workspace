@@ -47,5 +47,3 @@ document.addEventListener("DOMContentLoaded", function(e){
   let nombreDeUsuario = localStorage.getItem("nombre-usuario")
 document.getElementById("NombreUsuario").innerHTML += `${nombreDeUsuario}`
 });
-
-console.log(localStorage.getItem("nombre-usuario"));
