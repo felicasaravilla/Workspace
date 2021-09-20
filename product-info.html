@@ -13,7 +13,10 @@
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+
 </head>
+
+
 
 <body>
   <nav class="site-header sticky-top py-1 bg-dark">
@@ -39,6 +42,7 @@
       <dl>
 
         
+<!-- A partir de aquí, datos de el producto -->
 
         <dt>Imágenes ilustrativas</dt>
         <dd>
@@ -61,21 +65,56 @@
           <p id="productCriteria"></p>
         </dd>
 
-      </dl>
+        <dt>Precio</dt>
+        <dd>
+          <p id="productCost"></p>
+        </dd>
+        <p>dsdsssssssdsssds</p>
+
+              </dl>
+        <hr class="my-3">
+      </main>
+<!-- A partir de aquí caja de comentarios -->
+      
+        
+        <div class="container">
+          
+  <div class="col-sm-5 col-md-6 col-12 pb-4">
+          <form id="formulario">
+              <div class="form-group">
+                  <label for="textarea">Danos tu opinión</label>
+                  <textarea class="form-control" id="textarea" rows="5"></textarea>
+              </div>
+              <div class="form-group">
+                  <label for="score">Example select</label>
+                  <select class="form-control" id="score">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                  </select>
+              </div>
+              <div>
+              <p type="button" class="btn btn-light btn-lg btn-block" onclick="saveComment()">Enviar</p>
+            </div>
+          </form>
+
+        </div>
+
+          <div class="col-sm-5 col-md-6 col-12 pb-4">
+            <h2>Comentarios</h2>
+          </div> 
+          <div id="comments"></div>
+
+<!-- A partir de aquí lista de comentarios -->
+
+<div id="list"></div>
+
       <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Volver a productos</a>
     </div>
-  </main>
 
-  <!--
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 19/09/2021) y Entrega 4 (Fecha de entrega: 03/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
-  </div>
-   -->
+
   <footer class="text-muted">
     <div class="container">
       <p class="float-right">

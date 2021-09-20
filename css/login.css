@@ -66,6 +66,7 @@ color: white;
 
   img{
     width: 470px;
+    max-width: 100%;
     align-self: center;
   }
 
@@ -88,3 +89,4 @@ color: white;
     box-shadow: 0 0 10px #229fbc, 0 0 40px
     #229fbc, 0 0 80px #229fbc;
   }
+

@@ -341,3 +341,52 @@ html,body{
   box-shadow: 0 0 10px #000000, 0 0 40px
   #000000, 0 0 80px #000000;
 }
+
+/* commentaries */
+
+.checked {
+  color: orange !important;
+}
+
+.comments {
+  margin-top: 5%;
+  margin-left: 20px
+}
+
+.darker {
+  border: 1px solid #ecb21f;
+  background-color: black;
+  float: right;
+  border-radius: 5px;
+  padding-left: 40px;
+  padding-right: 30px;
+  padding-top: 10px
+}
+
+.comment {
+  border: 5px solid rgb(224, 221, 221);
+  background-color: rgb(224, 221, 221);
+  float: left;
+  border-radius: 1px;
+  padding-left: 40px;
+  padding-right: 30px;
+  padding-top: 10px
+}
+
+.comment h4,
+.comment span,
+.darker h4,
+.darker span {
+  display: inline
+}
+
+#align-form {
+  margin-top: 20px
+}
+
+.form-group p a {
+  color: white
+}
+
+/*carousel images*/
+
