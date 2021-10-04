@@ -25,15 +25,21 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html" id="Categorias">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html" id="Productos">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html" id="Vender">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html" id="MiCarrito">Mi carrito</a>
-      <a class="py-2 d-none d-md-inline-block" href="my-profile.html" id="NombreUsuario"></a>
+      <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="NombreUsuario" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          </button>
+          <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+            <a class="dropdown-item" href="cart.html">Mi Carrito</a>
+            <a class="dropdown-item" href="index.html" id="sign-off">Cerrar sesión</a>
+          </div>
+      </div>
     </div>
   </nav>
   
   <main role="main">
     <div class="container mt-5">
       <div class="text-center p-4">
-        <h2 id="productName">Descripción de la categoría</h2>
         <p class="lead">Encontrarás aquí toda la información de el producto seleccionado.</p>
         <p class="small alert-warning py-3"><strong>Nota: </strong>por simplicidad, cualquiera sea el producto
           seleccionado previamente, siempre se visualizará el mismo producto: <strong></strong>.</p>
@@ -43,37 +49,54 @@
 
         
 <!-- A partir de aquí, datos de el producto -->
-
-        <dt>Imágenes ilustrativas</dt>
-        <dd>
-          <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
+<div class="wrapper">
+  <div class="product-img">
+    <dd>
+      <div id="productImagesGallery">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
           </div>
-        </dd> 
-        
-        <dt>Descripción</dt>
-        <dd>
-          <p id="productDescription"></p>
-        </dd>
-
-        <dt>Cantidad de articulos vendidos</dt>
-        <dd>
-          <p id="productCount"></p>
-        </dd>
+          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </dd>
+  </div>
+  <div class="product-info">
+    <div class="product-text">
+      <h1 id="productName"></h1>
+      <h2 id="productCount"></h2>
+      <p id="productDescription"></p>
+    </div>
+    <div class="product-price-btn">
+      <p id="productCost"><span></span></p>
+      <!--<button type="button">buy now</button>-->
+    </div>
+  </div>
+</div>
 
         <dt>Categoría del producto</dt>
         <dd>
           <p id="productCriteria"></p>
         </dd>
-
-        <dt>Precio</dt>
-        <dd>
-          <p id="productCost"></p>
-        </dd>
         
+        <dt>Articulos relacionados:</dt>
 
-              </dl>
+<!-- A partir de aquí productos relacionados -->
+
+<div id="rel"></div>
+
+              
         <hr class="my-3">
       </main>
+
+
 <!-- A partir de aquí caja de comentarios -->
       
         

@@ -40,10 +40,13 @@ var getJSONData = function(url){
     });
 }
 
-//Función que se ejecuta una vez que se haya lanzado el evento de
-//que el documento se encuentra cargado, es decir, se encuentran todos los
-//elementos HTML presentes.
+//Inicio y cierre de sesión.
+
 document.addEventListener("DOMContentLoaded", function(e){
   let nombreDeUsuario = localStorage.getItem("nombre-usuario")
 document.getElementById("NombreUsuario").innerHTML += `${nombreDeUsuario}`
 });
+
+document.getElementById("sign-off").addEventListener("click", function(e){
+  localStorage.removeItem("nombre-usuario");
+})

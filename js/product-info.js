@@ -3,48 +3,61 @@
 
 var product = {};
 
-function showImagesGallery(array){
+function showImagesGallery(array) {
 
     let htmlContentToAppend = "";
-
-    for(let i = 0; i < array.length; i++){
-        let imageSrc = array[i];
+    for (let i = 0; i < array.length; i++) {
+        
+        if (i==0){
 
         htmlContentToAppend += `
-        <div class="col-lg-3 col-md-4 col-6">
-            <div class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="` + imageSrc + `" alt="">
-            </div>
-        </div>        `
+        <div class="carousel-item active">
+        <img class="d-block w-100" src="${array[i]}">
+      </div>
+        `;
 
-        document.getElementById("productImagesGallery").innerHTML = htmlContentToAppend;
+
+    }else{
+        htmlContentToAppend += `
+        <div class="carousel-item">
+        <img class="d-block w-100" src="${array[i]}">
+      </div>
+      `;
+    }
+        
+
+  
+
+
+        document.querySelector(".carousel-inner").innerHTML = htmlContentToAppend;
     }
 }
+
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
-document.addEventListener("DOMContentLoaded", function(e){
-    getJSONData(PRODUCT_INFO_URL).then(function(resultObj){
-        if (resultObj.status === "ok")
-        {
+document.addEventListener("DOMContentLoaded", function (e) {
+    getJSONData(PRODUCT_INFO_URL).then(function (resultObj) {
+        if (resultObj.status === "ok") {
             product = resultObj.data;
 
-            let productNameHTML  = document.getElementById("productName");
+            let productNameHTML = document.getElementById("productName");
             let productDescriptionHTML = document.getElementById("productDescription");
             let productCountHTML = document.getElementById("productCount");
             let productCriteriaHTML = document.getElementById("productCriteria");
             let productCostHTML = document.getElementById("productCost");
-        
+
             productNameHTML.innerHTML = product.name;
             productDescriptionHTML.innerHTML = product.description;
-            productCountHTML.innerHTML = product.soldCount;
+            productCountHTML.innerHTML = "Cantidad de productos vendidos: " + product.soldCount;
             productCriteriaHTML.innerHTML = product.category;
             productCostHTML.innerHTML = product.currency + " " + product.cost
-            
+
 
             //Muestro las imagenes en forma de galería
             showImagesGallery(product.images);
+            RelatedProducts();
         }
     });
 });
@@ -78,17 +91,17 @@ function showComments() {
 
 
 
-document.addEventListener("DOMContentLoaded", function(e) {
-    getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function(resultObj){
-                    if (resultObj.status === "ok") {
-                    commentList = resultObj.data;
-                    showComments();
+document.addEventListener("DOMContentLoaded", function (e) {
+    getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function (resultObj) {
+        if (resultObj.status === "ok") {
+            commentList = resultObj.data;
+            showComments();
 
 
-                }
-            }
+        }
+    }
 
-        )
+    )
 });
 
 /*Comienza código de caja de comments*/
@@ -97,7 +110,7 @@ var comments = [];
 
 function saveComment() {
     let date = new Date();
-    let formatDate = date.getDate().toString().padStart(2, '0') + "-" + (date.getMonth() +1).toString().padStart(2, '0') + "-" + date.getFullYear().toString() + "  " + date.getHours() + ":" + date.getMinutes();
+    let formatDate = date.getDate().toString().padStart(2, '0') + "-" + (date.getMonth() + 1).toString().padStart(2, '0') + "-" + date.getFullYear().toString() + "  " + date.getHours() + ":" + date.getMinutes();
     comment = {
         message: document.getElementById("textarea").value,
         completeDate: formatDate,
@@ -111,17 +124,17 @@ function saveComment() {
 
 
 /*Funcion de estrellas*/
-function drawStars(stars){
+function drawStars(stars) {
 
     let number = parseInt(stars);
-    let html="";
-    for(let i =1; i<=number;i++){
-        html +=`<span class="fa fa-star checked"></span>`
+    let html = "";
+    for (let i = 1; i <= number; i++) {
+        html += `<span class="fa fa-star checked"></span>`
 
     }
-    for(let j=number+1;j<=5;j++){
-        html +=`<span class="fa fa-star"></span>`
-    }    
+    for (let j = number + 1; j <= 5; j++) {
+        html += `<span class="fa fa-star"></span>`
+    }
     return html;
 
 }
@@ -145,7 +158,7 @@ function showComment() {
             </div>
             `
 
-            
+
 
     }
 
@@ -153,4 +166,39 @@ function showComment() {
 
     document.getElementById("comments").innerHTML = html;
     document.getElementById("formulario").reset();
+}
+
+function RelatedProducts() {
+    getJSONData(PRODUCT_INFO_URL).then(function (resultObj) {
+        let html = ""
+        if (resultObj.status === "ok") {
+
+            let productInfo = resultObj.data;
+            let relatedProducts = productInfo.relatedProducts;
+            
+
+            getJSONData(PRODUCTS_URL).then(function (resultObj) {
+                if (resultObj.status === "ok") {
+
+                    let html = ""
+                    let productsList = resultObj.data
+                    relatedProducts.forEach(relatedproduct => {
+
+                        let relproduct = productsList[relatedproduct];
+                        console.log(relproduct)
+                        
+
+                        html += `
+                        <div class="col-lg-3 col-md-4 col-6">
+                        <div class="d-block mb-4 h-100">
+                        <img class="img-fluid img-thumbnail" src="` + relproduct.imgSrc + `" alt="">
+                        </div>
+                    </div>
+                        `
+                    });
+                    document.getElementById("rel").innerHTML = html;
+                }
+            });
+        }
+    });
 }
