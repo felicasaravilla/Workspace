@@ -51,22 +51,123 @@
       </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 17/10/2021) y Entrega 7 (Fecha de entrega: 14/11/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
-  </div>
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </div>
+  <div class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Subtotal</th>
+          </tr>
+        </thead>
+        <tbody id="carrito">
+            
+            
+          </tbody>
+
+          
+          <tfoot>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th  class="align-middle" scope="col"> Total </th>
+              <th  class="align-middle" id = "total" scope="col">  </th>
+              
+            </tr>
+          </tfoot>
+        </table>
+        <div class="container">
+          <div class="text-center p-4">
+            <p class="lead">Ingresa los datos del artículo a vender.</p>
+          </div>
+          <div class="row justify-content-md-center">
+            <div class="col-md-8 order-md-1">
+              <form class="needs-validation" id="sell-info">
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="productName">Nombre</label>
+                    <input type="text" class="form-control" id="productName" placeholder="" value="" >
+                    <div class="invalid-feedback">
+                      Ingresa un nombre
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 mb-3">
+                        <label for="productDescription">Dirección para envío</label>
+                        <textarea class="form-control" id="productDescription" rows="3"></textarea>
+                    </div>
+                  </div>
+                <div class="row">
+                  <div class="col-md-4 mb-3">
+                      <label for="state">Medio de pago</label>
+                      <select class="custom-select d-block w-100" id="productCurrency" required="">
+                        <option selected>Débito</option>
+                        <option>Crédito</option>
+                        <option>Déposito</option>
+                      </select>
+                    </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4 mb-3">
+                      <label for="state">Tipo de tarjeta</label>
+                      <select class="custom-select d-block w-100" id="productCurrency" required="">
+                        <option selected>Visa</option>
+                        <option>Maestro</option>
+                        <option>OCA</option>
+                      </select>
+                    </div>
+                </div>
+                <hr class="mb-4">
+                <h5 class="mb-3">Tipo de envío</h5>
+                <div class="d-block my-3">
+                  <div class="custom-control custom-radio">
+                    <input id="goldradio" name="publicationType" type="radio" class="custom-control-input" checked="" required="">
+                    <label class="custom-control-label" for="goldradio">Normal 1-2 semanas (Sin costo)</label>
+                  </div>
+                  <div class="custom-control custom-radio">
+                    <input id="premiumradio" name="publicationType" type="radio" class="custom-control-input" required="">
+                    <label class="custom-control-label" for="premiumradio">Express - 3 días ($200)</label>
+                  </div>
+                  <div class="custom-control custom-radio">
+                    <input id="standardradio" name="publicationType" type="radio" class="custom-control-input" required="">
+                    <label class="custom-control-label" for="standardradio">Super express - 24 horas ($400)</label>
+                  </div>
+                </div>
+                <hr class="mb-4">
+                <h4 class="mb-3">Costos</h4>
+                <ul class="list-group mb-3">
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-0">Precio</h6>
+                        <small class="text-muted">Subtotal</small>
+                      </div>
+                      <span class="text-muted" id="productCost">-</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-0">Tipo de envío</h6>
+                        <small class="text-muted">S</small>
+                      </div>
+                      <span class="text-muted" id="comissionText">-</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                      <span>Total a pagar($)</span>
+                      <strong id="totalCost">-</strong>
+                    </li>
+                  </ul>
+                <hr class="mb-4">
+                <button class="btn btn-primary btn-lg" type="submit">Pagar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+              
+
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/dropzone.js"></script>
