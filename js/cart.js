@@ -4,7 +4,6 @@ let productosCarrito=[];
 /*completa la función para actualizar el subtotal del producto al modificar la cantidad del mismo*/
 function updateProductoSubtotal(cantidad, costo, id){
     
-   console.log(productosCarrito[id].currency);
    if (productosCarrito[id].currency === "UYU"){
        costo = costo / 40;
    }
@@ -49,27 +48,6 @@ function updateTotal(){
     document.getElementById("totalCost").innerHTML=total;
     document.getElementById("productCost").innerHTML=total;
 }
-
-
-
-
-function getCarrito(url){
-    
-    return fetch(url)
-    .then(respuesta=>{
-        return respuesta.json();
-    })
-    
-}
-
-document.addEventListener("DOMContentLoaded", function(e){
-    getCarrito("https://japdevdep.github.io/ecommerce-api/cart/654.json")
-    .then(respuesta=>{
-        productosCarrito = respuesta.articles;
-        showCarrito();
-    })
-})
-
 
 
 
