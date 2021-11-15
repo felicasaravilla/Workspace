@@ -60,7 +60,7 @@ function getCarrito(url){
     
 }
 
-/*calculo de el costo de envio*/
+/* DOM donde llamo a carrito, ejecuto las funciones y le doy el valor a los porcentajes*/
 let porcentaje = 0;
 
 document.addEventListener("DOMContentLoaded", function(e){
@@ -69,16 +69,16 @@ document.addEventListener("DOMContentLoaded", function(e){
         productosCarrito = respuesta.articles;
         showCarrito();
         CalculoEnvio();
-        document.getElementById("goldradio").addEventListener("change", function(){
+        document.getElementById("standardradio").addEventListener("change", function(){
             porcentaje = 0.05;
             CalculoEnvio();
         });
         
-        document.getElementById("premiumradio").addEventListener("change", function(){
+        document.getElementById("goldradio").addEventListener("change", function(){
             porcentaje = 0.07;
             CalculoEnvio();
         });
-        document.getElementById("standardradio").addEventListener("change", function(){
+        document.getElementById("premiumradio").addEventListener("change", function(){
             porcentaje = 0.15;
             CalculoEnvio();
         });
@@ -129,10 +129,6 @@ function CostoTotal(){
       // Loop over them and prevent submission
       var validation = Array.prototype.filter.call(forms, function(form) {
         button.addEventListener("click", function(event) {
-          if (form.checkValidity() === false) {
-            event.preventDefault();
-            event.stopPropagation();
-          }
           form.classList.add('was-validated');
           validarPago()
         }, false);
