@@ -45,43 +45,25 @@ function showProductsList(){
             ((maxCount == undefined) || (maxCount != undefined && parseInt(product.cost) <= maxCount))){
 
             htmlContentToAppend += `
-    <div class="col-md-4 mt-4">
-            <a href="product-info.html" class="list-group-item list-group-item-action">
-        <div class="card">
-            <div class="card-body">
-                        <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
+         <div class="col-md-4">
+         <a href="product-info.html" class="refcard">
+            <div class="card shadow" style="width: 20rem;">
+              <div class="inner">
+              <img class="card-img-top" src="` + product.imgSrc + `" alt="cardimg">
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title">`+ product.name +`</h5>
+                <small class="text-muted">` + product.soldCount + ` artículos vendidos</small>
+                <p class="card-text">` + product.description + `</p>
+                <p class="card-text">` + "$" + product.cost + `</p>
+              </div>
+              </a>
             </div>
-                    <div class="col">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h4 class="mb-2">`+ product.name +`</h4>
-                            <small class="text-muted">` + product.soldCount + ` artículos vendidos</small>
-                        </div>
-                        <p class="mb-1">` + product.description + `</p>
-                        <p class="mb-1">` + "$" + product.cost + `</p>
-                        
-                     </div>          
-        </div>
-        </a>
-    </div>
+          </div>
+
             
             `
         }
-
-/*
-                    <div class="card">
-                <div class="card-body">
-                    <div class="card-img-actions"> <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1562074043/234.png" class="card-img img-fluid" width="96" height="350" alt=""> </div>
-                </div>
-                <div class="card-body bg-light text-center">
-                    <div class="mb-2">
-                        <h6 class="font-weight-semibold mb-2"> <a href="#" class="text-default mb-2" data-abc="true">Toshiba Notebook with 500GB HDD & 8GB RAM</a> </h6> <a href="#" class="text-muted" data-abc="true">Laptops & Notebooks</a>
-                    </div>
-                    <h3 class="mb-0 font-weight-semibold">$250.99</h3>
-                    <div> <i class="fa fa-star star"></i> <i class="fa fa-star star"></i> <i class="fa fa-star star"></i> <i class="fa fa-star star"></i> </div>
-                    <div class="text-muted mb-3">34 reviews</div> <button type="button" class="btn bg-cart"><i class="fa fa-cart-plus mr-2"></i> Add to cart</button>
-                </div>
-            </div>
-*/
 
         document.getElementById("prod-list-container").innerHTML = htmlContentToAppend;
     }
@@ -155,3 +137,10 @@ document.addEventListener("DOMContentLoaded", function(e){
         showProductsList();
     });
 });
+
+btn.onclick = function(){
+    var buscar = document.getElementById("buscar").value;
+    if (buscar == "Suzuki Celerio"){
+        panel.innerHTML = "es correcto"
+    }
+}

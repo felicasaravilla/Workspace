@@ -14,23 +14,45 @@
     <link href="css/styles.css" rel="stylesheet">
   </head>
   <body>
-    <nav class="site-header sticky-top py-1 bg-dark">
-      <div class="container d-flex flex-column flex-md-row justify-content-between">
-        <a class="py-2 d-none d-md-inline-block" href="index.html" id="Inicio">Inicio</a>
-        <a class="py-2 d-none d-md-inline-block" href="categories.html" id="Categorias">Categorías</a>
-        <a class="py-2 d-none d-md-inline-block" href="products.html" id="Productos">Productos</a>
-        <a class="py-2 d-none d-md-inline-block" href="sell.html" id="Vender">Vender</a>
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="NombreUsuario" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            </button>
-            <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
-              <a class="dropdown-item" href="cart.html">Mi Carrito</a>
-              <a class="dropdown-item" href="index.html" id="sign-off">Cerrar sesión</a>
-            </div>
-        </div>
-      </div>
-    </nav>
+
+    <header>
+      <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <a class="navbar-brand" href="#">jap</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-lg-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="principal-index.html" id="Inicio">Inicio <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="categories.html" id="Categorias">Categorías</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="products.html" id="Productos">Productos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="sell.html" id="Vender">Vender</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="NombreUsuario" role="button" data-toggle="dropdown" aria-expanded="false">
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+                  <a class="dropdown-item" href="cart.html">Mi Carrito</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="index.html" id="sign-off">Cerrar sesión</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+  </div>
+  </header>
+
     <main role="main">
       <section class="jumbotron text-center">
         <div class="m-5">

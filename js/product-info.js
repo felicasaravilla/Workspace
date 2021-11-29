@@ -12,7 +12,7 @@ function showImagesGallery(array) {
 
         htmlContentToAppend += `
         <div class="carousel-item active">
-        <img class="d-block w-100" src="${array[i]}">
+        <img class="d-block-w-100" src="${array[i]}">
       </div>
         `;
 
@@ -20,7 +20,7 @@ function showImagesGallery(array) {
     }else{
         htmlContentToAppend += `
         <div class="carousel-item">
-        <img class="d-block w-100" src="${array[i]}">
+        <img class="d-block-w-100" src="${array[i]}">
       </div>
       `;
     }
